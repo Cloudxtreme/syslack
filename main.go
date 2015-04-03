@@ -17,6 +17,7 @@ import (
 )
 
 var (
+	config   = flag.String("config", "", "Config file to read")
 	bind     = flag.String("bind", "0.0.0.0:1514", "Address used to bind the syslog server")
 	slackURL = flag.String("slack_url", "", "URL of the Slack Incoming Webhook")
 )
