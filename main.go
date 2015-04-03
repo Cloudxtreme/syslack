@@ -109,6 +109,8 @@ func newHandler() *handler {
 }
 
 func main() {
+	flag.Parse()
+
 	s := syslog.NewServer()
 	s.AddHandler(newHandler())
 	s.Listen(*bind)
