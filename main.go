@@ -35,7 +35,7 @@ type attachment struct {
 	Fallback string   `json:"fallback,omitempty"`
 	Pretext  string   `json:"pretext,omitempty"`
 	Color    string   `json:"color,omitempty"`
-	Fields   []*field `json:"field,omitempty"`
+	Fields   []*field `json:"fields,omitempty"`
 }
 
 type field struct {
@@ -114,7 +114,10 @@ func main() {
 
 	s := syslog.NewServer()
 	s.AddHandler(newHandler())
-	s.Listen(*bind)
+	err := s.Listen(*bind)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	log.Printf("Listening to %s", *bind)
 
