@@ -12,8 +12,8 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/chrissnell/syslog"
 	"github.com/namsral/flag"
-	"github.com/ziutek/syslog"
 )
 
 var (
